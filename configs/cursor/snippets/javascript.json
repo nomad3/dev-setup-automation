@@ -1,0 +1,172 @@
+{
+  "Console Log": {
+    "prefix": "cl",
+    "body": [
+      "console.log($1);"
+    ],
+    "description": "Console log statement"
+  },
+  "Console Error": {
+    "prefix": "ce",
+    "body": [
+      "console.error($1);"
+    ],
+    "description": "Console error statement"
+  },
+  "Function Declaration": {
+    "prefix": "func",
+    "body": [
+      "function ${1:functionName}($2) {",
+      "\t$3",
+      "}"
+    ],
+    "description": "Function declaration"
+  },
+  "Arrow Function": {
+    "prefix": "arrow",
+    "body": [
+      "const ${1:functionName} = ($2) => {",
+      "\t$3",
+      "};"
+    ],
+    "description": "Arrow function"
+  },
+  "Async Function": {
+    "prefix": "async",
+    "body": [
+      "async function ${1:functionName}($2) {",
+      "\ttry {",
+      "\t\t$3",
+      "\t} catch (error) {",
+      "\t\tconsole.error('Error:', error);",
+      "\t}",
+      "}"
+    ],
+    "description": "Async function with try-catch"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+      "\t$3",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "For Each": {
+    "prefix": "foreach",
+    "body": [
+      "${1:array}.forEach((${2:item}) => {",
+      "\t$3",
+      "});"
+    ],
+    "description": "ForEach loop"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If Else": {
+    "prefix": "ifelse",
+    "body": [
+      "if ($1) {",
+      "\t$2",
+      "} else {",
+      "\t$3",
+      "}"
+    ],
+    "description": "If-else statement"
+  },
+  "Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t$1",
+      "} catch (error) {",
+      "\tconsole.error('Error:', error);",
+      "\t$2",
+      "}"
+    ],
+    "description": "Try-catch block"
+  },
+  "Import Statement": {
+    "prefix": "import",
+    "body": [
+      "import ${1:module} from '${2:path}';"
+    ],
+    "description": "ES6 import statement"
+  },
+  "Export Statement": {
+    "prefix": "export",
+    "body": [
+      "export default ${1:module};"
+    ],
+    "description": "ES6 export statement"
+  },
+  "Class Declaration": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "\tconstructor($2) {",
+      "\t\t$3",
+      "\t}",
+      "\t",
+      "\t$4",
+      "}"
+    ],
+    "description": "Class declaration"
+  },
+  "Template Literal": {
+    "prefix": "template",
+    "body": [
+      "`${1:content}`"
+    ],
+    "description": "Template literal"
+  },
+  "Object Destructuring": {
+    "prefix": "destruct",
+    "body": [
+      "const { ${1:property} } = ${2:object};"
+    ],
+    "description": "Object destructuring"
+  },
+  "Array Destructuring": {
+    "prefix": "arraydestruct",
+    "body": [
+      "const [${1:first}, ${2:second}] = ${3:array};"
+    ],
+    "description": "Array destructuring"
+  },
+  "Promise": {
+    "prefix": "promise",
+    "body": [
+      "new Promise((resolve, reject) => {",
+      "\t$1",
+      "});"
+    ],
+    "description": "Promise constructor"
+  },
+  "Set Timeout": {
+    "prefix": "timeout",
+    "body": [
+      "setTimeout(() => {",
+      "\t$1",
+      "}, ${2:1000});"
+    ],
+    "description": "Set timeout"
+  },
+  "Set Interval": {
+    "prefix": "interval",
+    "body": [
+      "setInterval(() => {",
+      "\t$1",
+      "}, ${2:1000});"
+    ],
+    "description": "Set interval"
+  }
+}

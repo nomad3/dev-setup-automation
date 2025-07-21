@@ -1,0 +1,184 @@
+{
+  "Print Statement": {
+    "prefix": "print",
+    "body": [
+      "print($1)"
+    ],
+    "description": "Print statement"
+  },
+  "Function Definition": {
+    "prefix": "def",
+    "body": [
+      "def ${1:function_name}($2):",
+      "\t$3"
+    ],
+    "description": "Function definition"
+  },
+  "Class Definition": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName}:",
+      "\tdef __init__(self, $2):",
+      "\t\t$3"
+    ],
+    "description": "Class definition"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if $1:",
+      "\t$2"
+    ],
+    "description": "If statement"
+  },
+  "If Else": {
+    "prefix": "ifelse",
+    "body": [
+      "if $1:",
+      "\t$2",
+      "else:",
+      "\t$3"
+    ],
+    "description": "If-else statement"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:item} in ${2:items}:",
+      "\t$3"
+    ],
+    "description": "For loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while $1:",
+      "\t$2"
+    ],
+    "description": "While loop"
+  },
+  "Try Except": {
+    "prefix": "try",
+    "body": [
+      "try:",
+      "\t$1",
+      "except ${2:Exception} as ${3:e}:",
+      "\t$4"
+    ],
+    "description": "Try-except block"
+  },
+  "Import Statement": {
+    "prefix": "import",
+    "body": [
+      "import ${1:module}"
+    ],
+    "description": "Import statement"
+  },
+  "From Import": {
+    "prefix": "from",
+    "body": [
+      "from ${1:module} import ${2:function}"
+    ],
+    "description": "From import statement"
+  },
+  "List Comprehension": {
+    "prefix": "listcomp",
+    "body": [
+      "[${1:expression} for ${2:item} in ${3:items}]"
+    ],
+    "description": "List comprehension"
+  },
+  "Dictionary Comprehension": {
+    "prefix": "dictcomp",
+    "body": [
+      "{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:items}}"
+    ],
+    "description": "Dictionary comprehension"
+  },
+  "Lambda Function": {
+    "prefix": "lambda",
+    "body": [
+      "lambda ${1:x}: ${2:x}"
+    ],
+    "description": "Lambda function"
+  },
+  "Main Guard": {
+    "prefix": "main",
+    "body": [
+      "if __name__ == '__main__':",
+      "\t$1"
+    ],
+    "description": "Main guard"
+  },
+  "Docstring": {
+    "prefix": "doc",
+    "body": [
+      "\"\"\"",
+      "$1",
+      "\"\"\""
+    ],
+    "description": "Docstring"
+  },
+  "Assert Statement": {
+    "prefix": "assert",
+    "body": [
+      "assert $1"
+    ],
+    "description": "Assert statement"
+  },
+  "With Statement": {
+    "prefix": "with",
+    "body": [
+      "with ${1:open('file.txt')} as ${2:f}:",
+      "\t$3"
+    ],
+    "description": "With statement"
+  },
+  "Generator Function": {
+    "prefix": "generator",
+    "body": [
+      "def ${1:generator_name}($2):",
+      "\t$3",
+      "\tyield ${4:value}"
+    ],
+    "description": "Generator function"
+  },
+  "Decorator": {
+    "prefix": "decorator",
+    "body": [
+      "def ${1:decorator_name}(func):",
+      "\tdef wrapper(*args, **kwargs):",
+      "\t\t$2",
+      "\t\treturn func(*args, **kwargs)",
+      "\treturn wrapper"
+    ],
+    "description": "Decorator function"
+  },
+  "Property Decorator": {
+    "prefix": "property",
+    "body": [
+      "@property",
+      "def ${1:property_name}(self):",
+      "\treturn self._${1:property_name}"
+    ],
+    "description": "Property decorator"
+  },
+  "Static Method": {
+    "prefix": "staticmethod",
+    "body": [
+      "@staticmethod",
+      "def ${1:method_name}($2):",
+      "\t$3"
+    ],
+    "description": "Static method"
+  },
+  "Class Method": {
+    "prefix": "classmethod",
+    "body": [
+      "@classmethod",
+      "def ${1:method_name}(cls, $2):",
+      "\t$3"
+    ],
+    "description": "Class method"
+  }
+}

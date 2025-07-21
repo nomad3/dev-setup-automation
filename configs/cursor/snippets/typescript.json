@@ -1,0 +1,198 @@
+{
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:InterfaceName} {",
+      "\t$2",
+      "}"
+    ],
+    "description": "TypeScript interface"
+  },
+  "Type Alias": {
+    "prefix": "type",
+    "body": [
+      "type ${1:TypeName} = $2;"
+    ],
+    "description": "TypeScript type alias"
+  },
+  "Function with Types": {
+    "prefix": "func",
+    "body": [
+      "function ${1:functionName}(${2:param}: ${3:string}): ${4:void} {",
+      "\t$5",
+      "}"
+    ],
+    "description": "Function with TypeScript types"
+  },
+  "Arrow Function with Types": {
+    "prefix": "arrow",
+    "body": [
+      "const ${1:functionName} = (${2:param}: ${3:string}): ${4:void} => {",
+      "\t$5",
+      "};"
+    ],
+    "description": "Arrow function with TypeScript types"
+  },
+  "Async Function with Types": {
+    "prefix": "async",
+    "body": [
+      "async function ${1:functionName}(${2:param}: ${3:string}): Promise<${4:void}> {",
+      "\ttry {",
+      "\t\t$5",
+      "\t} catch (error) {",
+      "\t\tconsole.error('Error:', error);",
+      "\t}",
+      "}"
+    ],
+    "description": "Async function with TypeScript types"
+  },
+  "Class with Types": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "\tprivate ${2:property}: ${3:string};",
+      "\t",
+      "\tconstructor(${4:param}: ${5:string}) {",
+      "\t\tthis.${2:property} = ${4:param};",
+      "\t}",
+      "\t",
+      "\tpublic ${6:method}(): ${7:void} {",
+      "\t\t$8",
+      "\t}",
+      "}"
+    ],
+    "description": "Class with TypeScript types"
+  },
+  "Generic Function": {
+    "prefix": "generic",
+    "body": [
+      "function ${1:functionName}<T>(${2:param}: T): T {",
+      "\t$3",
+      "\treturn ${2:param};",
+      "}"
+    ],
+    "description": "Generic function"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:EnumName} {",
+      "\t${2:VALUE} = '${3:value}',",
+      "\t$4",
+      "}"
+    ],
+    "description": "TypeScript enum"
+  },
+  "Import Type": {
+    "prefix": "importtype",
+    "body": [
+      "import type { ${1:Type} } from '${2:module}';"
+    ],
+    "description": "Import type statement"
+  },
+  "Export Type": {
+    "prefix": "exporttype",
+    "body": [
+      "export type { ${1:Type} };"
+    ],
+    "description": "Export type statement"
+  },
+  "Union Type": {
+    "prefix": "union",
+    "body": [
+      "type ${1:TypeName} = ${2:string} | ${3:number};"
+    ],
+    "description": "Union type"
+  },
+  "Intersection Type": {
+    "prefix": "intersection",
+    "body": [
+      "type ${1:TypeName} = ${2:TypeA} & ${3:TypeB};"
+    ],
+    "description": "Intersection type"
+  },
+  "Optional Property": {
+    "prefix": "optional",
+    "body": [
+      "${1:property}?: ${2:string};"
+    ],
+    "description": "Optional property"
+  },
+  "Readonly Property": {
+    "prefix": "readonly",
+    "body": [
+      "readonly ${1:property}: ${2:string};"
+    ],
+    "description": "Readonly property"
+  },
+  "Partial Type": {
+    "prefix": "partial",
+    "body": [
+      "type ${1:PartialType} = Partial<${2:OriginalType}>;"
+    ],
+    "description": "Partial type"
+  },
+  "Pick Type": {
+    "prefix": "pick",
+    "body": [
+      "type ${1:PickedType} = Pick<${2:OriginalType}, '${3:property}'>;"
+    ],
+    "description": "Pick type"
+  },
+  "Omit Type": {
+    "prefix": "omit",
+    "body": [
+      "type ${1:OmittedType} = Omit<${2:OriginalType}, '${3:property}'>;"
+    ],
+    "description": "Omit type"
+  },
+  "Record Type": {
+    "prefix": "record",
+    "body": [
+      "type ${1:RecordType} = Record<${2:string}, ${3:any}>;"
+    ],
+    "description": "Record type"
+  },
+  "Promise Type": {
+    "prefix": "promise",
+    "body": [
+      "Promise<${1:ResultType}>"
+    ],
+    "description": "Promise type"
+  },
+  "Array Type": {
+    "prefix": "array",
+    "body": [
+      "${1:string}[]"
+    ],
+    "description": "Array type"
+  },
+  "Tuple Type": {
+    "prefix": "tuple",
+    "body": [
+      "[${1:string}, ${2:number}]"
+    ],
+    "description": "Tuple type"
+  },
+  "Function Type": {
+    "prefix": "functype",
+    "body": [
+      "(${1:param}: ${2:string}) => ${3:void}"
+    ],
+    "description": "Function type"
+  },
+  "Keyof Type": {
+    "prefix": "keyof",
+    "body": [
+      "keyof ${1:ObjectType}"
+    ],
+    "description": "Keyof type"
+  },
+  "Typeof Type": {
+    "prefix": "typeof",
+    "body": [
+      "typeof ${1:variable}"
+    ],
+    "description": "Typeof type"
+  }
+}

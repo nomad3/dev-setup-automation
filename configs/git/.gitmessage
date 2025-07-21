@@ -1,0 +1,107 @@
+# <type>(<scope>): <subject>
+#
+# <body>
+#
+# <footer>
+
+# Types:
+#   feat     (new feature for the user, not a new feature for build script)
+#   fix      (bug fix for the user, not a fix to a build script)
+#   docs     (changes to the documentation)
+#   style    (formatting, missing semi colons, etc; no production code change)
+#   refactor (refactoring production code, eg. renaming a variable)
+#   test     (adding missing tests, refactoring tests; no production code change)
+#   chore    (updating grunt tasks etc; no production code change)
+#   perf     (performance improvements)
+#   ci       (changes to CI configuration files and scripts)
+#   build    (changes that affect the build system or external dependencies)
+#   revert   (revert a previous commit)
+
+# Scopes:
+#   api      (API related changes)
+#   auth     (authentication related changes)
+#   ui       (user interface changes)
+#   db       (database related changes)
+#   test     (test related changes)
+#   docs     (documentation changes)
+#   deps     (dependency updates)
+#   config   (configuration changes)
+#   ci       (CI/CD changes)
+#   build    (build system changes)
+
+# Subject:
+#   - use imperative, present tense: "change" not "changed" nor "changes"
+#   - don't capitalize first letter
+#   - no dot (.) at the end
+
+# Body:
+#   - use imperative, present tense: "change" not "changed" nor "changes"
+#   - include motivation for the change and contrast with previous behavior
+
+# Footer:
+#   - Breaking changes should start with "BREAKING CHANGE: "
+#   - Issues should be referenced by their number, e.g. "Closes #123"
+#   - Co-authored-by: for co-authors
+
+# Examples:
+#   feat(auth): add OAuth2 authentication
+#
+#   Implement OAuth2 authentication using Google and GitHub providers.
+#   This allows users to sign in with their existing accounts.
+#
+#   Closes #123
+#   Co-authored-by: John Doe <john@example.com>
+
+#   fix(api): resolve user data not loading issue
+#
+#   The user data was not loading due to incorrect API endpoint.
+#   Updated the endpoint to use the correct path.
+#
+#   Fixes #456
+
+#   docs(readme): update installation instructions
+#
+#   Added step-by-step installation instructions for new users.
+#   Included troubleshooting section for common issues.
+
+#   style(ui): format code according to style guide
+#
+#   Applied consistent formatting to all UI components.
+#   No functional changes made.
+
+#   refactor(db): optimize database queries
+#
+#   Replaced N+1 queries with optimized joins.
+#   Improved performance by 50% for user list page.
+
+#   test(auth): add unit tests for authentication
+#
+#   Added comprehensive unit tests for OAuth2 authentication.
+#   Coverage increased to 95% for auth module.
+
+#   chore(deps): update dependencies to latest versions
+#
+#   Updated all dependencies to their latest stable versions.
+#   No breaking changes introduced.
+
+#   perf(api): optimize API response time
+#
+#   Implemented caching layer for frequently accessed data.
+#   Reduced average response time from 200ms to 50ms.
+
+#   ci(build): add automated testing pipeline
+#
+#   Added GitHub Actions workflow for automated testing.
+#   Tests run on every push and pull request.
+
+#   build(deps): update webpack configuration
+#
+#   Updated webpack configuration for better tree shaking.
+#   Reduced bundle size by 30%.
+
+#   revert(api): revert breaking API changes
+#
+#   Reverted API changes that caused client compatibility issues.
+#   Will re-implement with proper versioning in next release.
+#
+#   Reverts #789 

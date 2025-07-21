@@ -1,0 +1,319 @@
+[user]
+    name = Your Name
+    email = your.email@example.com
+
+[core]
+    editor = code --wait
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[rebase]
+    autoStash = true
+
+[merge]
+    ff = false
+
+[log]
+    decorate = auto
+    abbrevCommit = true
+    graph = true
+
+[status]
+    showUntrackedFiles = all
+
+[alias]
+    # Basic aliases
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = !gitk
+
+    # Log aliases
+    lg = log --oneline --graph --decorate
+    lga = log --oneline --graph --decorate --all
+    ll = log --oneline --graph --decorate --stat
+    lla = log --oneline --graph --decorate --stat --all
+    lll = log --oneline --graph --decorate --stat --all --author="$(git config user.name)"
+
+    # Branch aliases
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    bD = branch -D
+    bm = branch -m
+    brc = branch --show-current
+
+    # Remote aliases
+    r = remote
+    ra = remote add
+    rr = remote remove
+    rv = remote -v
+
+    # Stash aliases
+    s = stash
+    sa = stash apply
+    sp = stash pop
+    sd = stash drop
+    sl = stash list
+    ss = stash show
+
+    # Diff aliases
+    d = diff
+    dc = diff --cached
+    dw = diff --word-diff
+    ds = diff --staged
+
+    # Reset aliases
+    r1 = reset HEAD~1
+    r2 = reset HEAD~2
+    r3 = reset HEAD~3
+    rh = reset --hard
+    rs = reset --soft
+
+    # Cherry-pick aliases
+    cp = cherry-pick
+    cpn = cherry-pick --no-commit
+
+    # Rebase aliases
+    rb = rebase
+    rbi = rebase -i
+    rbc = rebase --continue
+    rba = rebase --abort
+
+    # Merge aliases
+    m = merge
+    mc = merge --continue
+    ma = merge --abort
+
+    # Tag aliases
+    t = tag
+    ta = tag -a
+    td = tag -d
+    tl = tag -l
+
+    # Worktree aliases
+    wt = worktree
+    wta = worktree add
+    wtr = worktree remove
+    wtl = worktree list
+
+    # Submodule aliases
+    sm = submodule
+    sma = submodule add
+    smu = submodule update
+    smi = submodule init
+
+    # Advanced aliases
+    amend = commit --amend
+    amendn = commit --amend --no-edit
+    undo = reset --soft HEAD~1
+    uncommit = reset --soft HEAD~1
+    unstage = reset HEAD --
+    unstage-all = reset HEAD
+    discard = checkout --
+    discard-all = checkout -- .
+    clean-untracked = clean -fd
+    clean-ignored = clean -fX
+    clean-all = clean -fdx
+
+    # Information aliases
+    who = shortlog -s --
+    whoami = "!git config user.name && git config user.email"
+    config = config --list
+    config-local = config --local --list
+    config-global = config --global --list
+
+    # Utility aliases
+    aliases = config --get-regexp alias
+    branches = branch -a
+    remotes = remote -v
+    tags = tag -l
+    stashes = stash list
+    ignored = status --ignored
+    untracked = ls-files --others --exclude-standard
+    tracked = ls-files
+    modified = diff --name-only
+    staged = diff --cached --name-only
+    conflicts = diff --name-only --diff-filter=U
+
+    # GitHub/GitLab specific
+    pr = "!gh pr create"
+    issue = "!gh issue create"
+    repo = "!gh repo view --web"
+    clone-org = "!gh repo list --limit 1000 --json nameWithOwner --jq '.[].nameWithOwner' | xargs -L1 git clone"
+
+    # Development workflow
+    feature = "!git checkout -b feature/"
+    hotfix = "!git checkout -b hotfix/"
+    release = "!git checkout -b release/"
+    bugfix = "!git checkout -b bugfix/"
+    chore = "!git checkout -b chore/"
+
+    # Commit message templates
+    commit-feat = "!git commit -m \"feat: \""
+    commit-fix = "!git commit -m \"fix: \""
+    commit-docs = "!git commit -m \"docs: \""
+    commit-style = "!git commit -m \"style: \""
+    commit-refactor = "!git commit -m \"refactor: \""
+    commit-test = "!git commit -m \"test: \""
+    commit-chore = "!git commit -m \"chore: \""
+
+    # Git flow
+    flow-init = "!git flow init -d"
+    flow-feature = "!git flow feature"
+    flow-release = "!git flow release"
+    flow-hotfix = "!git flow hotfix"
+
+    # Advanced git operations
+    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    graph-all = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+    graph-decorate = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
+    graph-decorate-all = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --all
+
+    # File operations
+    add-patch = add -p
+    add-interactive = add -i
+    reset-patch = reset -p
+    checkout-patch = checkout -p
+
+    # Search and find
+    grep-all = grep --all-match
+    grep-untracked = grep --untracked
+    grep-ignored = grep --ignored
+    find-untracked = "!git ls-files --others --exclude-standard"
+    find-ignored = "!git ls-files --ignored --exclude-standard"
+    find-deleted = "!git ls-files --deleted"
+
+    # Statistics
+    stats = shortlog -s -n
+    stats-all = shortlog -s -n --all
+    stats-author = "!git shortlog -s -n --author=\"$(git config user.name)\""
+    stats-email = "!git shortlog -s -n --author=\"$(git config user.email)\""
+
+    # Maintenance
+    gc-aggressive = gc --aggressive
+    gc-prune = gc --prune=now
+    repack-aggressive = repack -a -d --depth=250 --window=250
+    maintenance = "!git gc && git repack -d && git prune"
+
+    # Debug and troubleshooting
+    debug = "!git config --list --show-origin"
+    debug-local = "!git config --local --list --show-origin"
+    debug-global = "!git config --global --list --show-origin"
+    debug-system = "!git config --system --list --show-origin"
+
+[color]
+    ui = auto
+    status = auto
+    branch = auto
+    diff = auto
+    log = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[help]
+    autocorrect = 1
+
+[rerere]
+    enabled = true
+
+[credential]
+    helper = osxkeychain
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
+[url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com/
+
+[url "git@bitbucket.org:"]
+    insteadOf = https://bitbucket.org/
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[merge]
+    tool = vscode
+    conflictstyle = diff3
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+    trustExitCode = true
+
+[diff]
+    tool = vscode
+
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[commit]
+    template = ~/.gitmessage
+
+[core]
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+    editor = code --wait
+    pager = bat --style=numbers,changes --color=always
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[rebase]
+    autoStash = true
+
+[merge]
+    ff = false
+
+[log]
+    decorate = auto
+    abbrevCommit = true
+    graph = true
+
+[status]
+    showUntrackedFiles = all 
